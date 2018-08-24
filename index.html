@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Pinterest</title>
+    <link rel="shortcut icon" href="assets/img/pinterest-logo.png">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link rel="stylesheet" href="./src/css/home.css">
+    
+</head>
+<body>
+    <!-- header -->
+<div id="headerContainer">
+    <nav class="navbar navbar-light bg-light" id="navContainer">
+        <div id="logoYBuscador">
+            <a class="navbar-brand" href="#">
+                <img id="logo" src="assets/img/pinterest-simbol.jpg" width="34" height="34" alt="">
+            </a>
+            <div class="form-inline" id="inputHeaderMaster">
+                <span id='span'>
+                    <i class="fas fa-search"></i>
+                </span>
+                <input class="search form-control " type="search" placeholder="Search"  id="inputHeader">
+                <div class="dropdown show d-none d-lg-block" >
+                    <a class="dropdown-toggle"id="dropdown"  href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Todos los Pines</a>
+                    <div class="dropdown-menu">
+                        <a class="dropdown-item" href="#">Photography</a>
+                        <a class="dropdown-item" href="#">Ilumination</a>
+                        <a class="dropdown-item" href="#">Favorites</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="home-Perfil">
+
+            <div class="headerLinks">
+                <div class="d-none d-md-block" id="home">Home</div>
+            </div>
+            <div class="headerLinks">
+                <div class="d-none d-md-block">Following</div>
+                <div class="d-block d-md-none">
+                    <i class="fas fa-user-friends"></i>
+                </div>
+            </div>
+            <div class="headerLinks">
+                <div class="d-none d-md-block">Explore</div>
+                <div class="d-block d-md-none">
+                    <i class="fas fa-compass"></i>
+                </div>
+            </div>
+            <div class="headerLinks">
+                <img id="photoProfile" src="assets/img/131d39dbd9e604d251739c9fd5567ca6.jpg" alt="User" height="26" width="26">
+                <div class="d-none d-md-block">Yas</div>
+            </div>
+            <div class="headerLinks">
+                <i class="fas fa-comment-dots"></i>
+            </div>
+            <div class="headerLinks">
+                <div>
+                    <i class="fas fa-bell"></i>
+                </div>
+            </div>
+            <div class="headerLinks">
+                <i class="fas fa-ellipsis-h"></i>
+            </div>
+
+        </div>
+       
+
+
+
+
+    </nav>
+</div>
+    <!-- fin header -->
+    <!-- body -->
+<div class="containertags ">
+    <div class="left">
+        <button id="left-button">
+            <i class="fas fa-angle-left"></i>
+        </button>
+    </div>
+    <div class="center" id="containerScroll">
+
+    </div>
+    <div class="right">
+        <button id="right-button">
+            <i class="fas fa-angle-right"></i>
+        </button>
+        
+    </div>
+</div>
+<div id='contenedor' class="container">
+    <div class="card-columns" id="containertoCards"></div>
+</div>
+    <!-- fin body -->
+    <!-- startModal -->
+    <div id="mymodal"></div>
+    <!-- endModal -->
+    <!-- starModalAddPinAndQuestions -->
+    <div class="z-Icons">
+        <i class="fas fa-plus" id="addMorePins"></i>
+        <i class="fas fa-question"></i>
+    </div>
+    <!-- endModalAddPinAndQuestions,start modalPins -->
+    <div class="modal fade" id="addPinsToFavorites" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Crear Pin</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-6">
+                            <label class="custom-file-upload">
+                                <div id="centercenterdiv">
+                                    <div class="row">
+                                        <i id="icon-Camera"class="fas fa-camera fa-2x"></i>
+                                    </div>
+                                    <div class="row">
+                                        <input id="add-File" type="file" accept="img" /> Arrastra suelta, o haz click para cargar
+                                    </div>
+                                </div>
+                            </label>
+                        </div>
+                        <div class="col-6">
+                            <div class="form-group">
+                                <label for="exampleInputEmail1">Title</label>
+                                <input class="form-control" id="title-add-pin" placeholder="Añade un titulo" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleInputPassword1">Descripción</label>
+                                <textarea type="password" id="description-add-pin"class="form-control" placeholder="Di algo más sobre este pin" required></textarea>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <div id="footerMain">
+                            <div id="containerButtons">
+                                <button  class="btnmodal"id="uploadPin"> Cargar Pin</button>
+                                <button class="btnmodal" disabled="disabled">Guardar desde Sitio</button>
+                            </div>
+                            <button class="btnmodal" id="btnEnviar">Listo</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    <!-- scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    <script src="./src/js/controller.js"></script>
+    <script src="./src/js/model.js"></script>
+    <script src="./src/js/view.js"></script>
+    
+</body>
+</html>
